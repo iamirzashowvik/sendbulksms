@@ -1,6 +1,6 @@
 # bulksmssender
 
-A new Flutter project.
+You can send message to unlimited numbers and you can send same/diffent messages. 
 
 ## Getting Started
 
