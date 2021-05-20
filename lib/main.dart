@@ -1,13 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 import 'package:sms/sms.dart';
 
+import 'dev.dart';
+
 void main() {
   runApp(MyApp());
 }
+class MyChromeSafariBrowser extends ChromeSafariBrowser {
+  @override
+  void onOpened() {
+    print("ChromeSafari browser opened");
+  }
 
+  @override
+  void onCompletedInitialLoad() {
+    print("ChromeSafari browser initial load completed");
+  }
+
+  @override
+  void onClosed() {
+    print("ChromeSafari browser closed");
+  }
+}
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -40,7 +59,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(appBar: AppBar(title: Text('Bulk Sms Sender'),actions: [Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Dev()),
+          );
+        },
+        child: Icon(
+          FontAwesomeIcons.dev,
+          color: Colors.white,
+        ),
+      ),
+    ),],),
       body: SafeArea(
         child: Center(
           child: Form(
