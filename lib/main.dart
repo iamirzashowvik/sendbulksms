@@ -82,6 +82,14 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                      onPressed: () {
+                       Get.snackbar('Instruction To Send Bulk SMS', 'Phone Number\'s Example: 017104270950164481915701710000000 and type your message');
+                      },
+                      child: Text('Instruction',)),
+                ),
+                Padding(
                   padding: EdgeInsets.symmetric(
                     horizontal: 30,
                   ),
@@ -217,7 +225,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           sender.sendSms(new SmsMessage(
                               address,
                               // 'Dear user,this is your code ${code.text.split(' ')[i]}')); //important for different text
-                              'Dear user,this is your code ${code.text}'));
+                              //'Dear user,this is your code ${code.text}'
+                              code.text  ));
                           await Future.delayed(Duration(seconds: 1));
 
                         }
