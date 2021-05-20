@@ -52,7 +52,7 @@ class _DevState extends State<Dev> {
             crossAxisAlignment:
             CrossAxisAlignment.center,
             children: [
-              CircleAvatar(backgroundImage: NetworkImage('https://i.pinimg.com/originals/1b/8b/5e/1b8b5eb487350a6a547e4f3fe1ada0fc.jpg'),radius: 150,),
+              CircleAvatar(backgroundImage: AssetImage('assets/1b8b5eb487350a6a547e4f3fe1ada0fc.jpg'),radius: 150,),
               // Image.network('https://i.pinimg.com/originals/1b/8b/5e/1b8b5eb487350a6a547e4f3fe1ada0fc.jpg',height: ,),
               Text('Mirza Showvik',
                   // minFontSize: 12,
